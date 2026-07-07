@@ -1,0 +1,206 @@
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f8fc;
+}
+
+header{
+    background:#0056b3;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+header h1{
+    margin:0;
+    font-size:40px;
+}
+
+header p{
+    font-size:20px;
+}
+
+button{
+    background:#00bfff;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    margin:10px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#003d80;
+}
+
+section{
+    width:90%;
+    margin:auto;
+    padding:30px;
+}
+
+h2{
+    color:#0056b3;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+ul li{
+    background:white;
+    margin:10px 0;
+    padding:15px;
+    border-left:5px solid #0056b3;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+
+footer{
+    background:#0056b3;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+/* Navigation Bar */
+
+.navbar{
+    background:#003b8e;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 50px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo a{
+    color:white;
+    text-decoration:none;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+.nav-links li{
+    background:none;
+    box-shadow:none;
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#00c6ff;
+}/* Hero Section */
+
+.hero{
+    background:linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.60)),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600");
+    background-size:cover;
+    background-position:center;
+    height:85vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    color:white;
+}
+
+.hero h1{
+
+    font-size:50px;
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    font-size:22px;
+    margin-bottom:30px;
+
+}
+
+.btn{
+
+    background:#007BFF;
+    color:white;
+    padding:15px 35px;
+    text-decoration:none;
+    border-radius:6px;
+    margin-right:15px;
+
+}
+
+.btn:hover{
+
+    background:#0056b3;
+
+}
+
+.btn2{
+
+    background:#25D366;
+    color:white;
+    padding:15px 35px;
+    text-decoration:none;
+    border-radius:6px;
+
+}
+
+.btn2:hover{
+
+    background:#128C7E;
+
+}
+/* Services */
+
+.service-container{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+
+}
+
+.card{
+
+width:300px;
+background:white;
+padding:25px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card h3{
+
+color:#0056b3;
+
+}
