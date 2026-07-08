@@ -1,10 +1,14 @@
-/* General */
+/* =========================
+   Sayeem IT Solution
+   Professional CSS
+========================= */
+
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:'Segoe UI',Arial,sans-serif;
 }
 
 
@@ -14,50 +18,63 @@ html{
 
 
 body{
-    background:#f5f5f5;
-    color:#333;
+
+    background:#f8fafc;
+    color:#1e293b;
+
 }
 
 
 
-/* Navbar */
+/* ===== NAVBAR ===== */
+
 
 .navbar{
 
     width:100%;
+    height:75px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:15px 50px;
-    background:#111;
-    color:white;
+
+    padding:0 70px;
+
+    background:rgba(15,23,42,.95);
+
     position:sticky;
     top:0;
-    z-index:1000;
+
+    z-index:999;
 
 }
+
 
 
 .logo{
 
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:15px;
 
 }
 
 
 .logo img{
 
-    width:50px;
-    height:50px;
+    width:55px;
+    height:55px;
+
     border-radius:50%;
-    object-fit:cover;
+
+    border:2px solid #38bdf8;
 
 }
 
 
+
 .logo h2{
+
+    color:white;
 
     font-size:22px;
 
@@ -65,19 +82,26 @@ body{
 
 
 
+
 .nav-links a{
 
     color:white;
+
     text-decoration:none;
-    margin-left:25px;
-    font-size:17px;
+
+    margin-left:30px;
+
+    font-size:16px;
+
+    transition:.3s;
 
 }
+
 
 
 .nav-links a:hover{
 
-    color:#00aaff;
+    color:#38bdf8;
 
 }
 
@@ -85,17 +109,21 @@ body{
 
 
 
-/* Hero Section */
+/* ===== HERO ===== */
+
 
 .hero{
 
     height:90vh;
 
     background:
+
     linear-gradient(
-    rgba(0,0,0,.6),
-    rgba(0,0,0,.6)
+    135deg,
+    rgba(2,6,23,.85),
+    rgba(14,165,233,.45)
     ),
+
     url("background.jpg");
 
     background-size:cover;
@@ -116,9 +144,19 @@ body{
 
 
 
+.hero-content{
+
+    max-width:800px;
+
+}
+
+
+
 .hero-content h1{
 
-    font-size:45px;
+    font-size:55px;
+
+    font-weight:700;
 
     margin-bottom:20px;
 
@@ -128,80 +166,32 @@ body{
 
 .hero-content p{
 
-    font-size:20px;
+    font-size:21px;
 
-    margin-bottom:30px;
+    line-height:1.6;
+
+    margin-bottom:35px;
 
 }
-
 
 
 
 .btn{
 
-    background:#008cff;
+
+    display:inline-block;
+
+    background:#0ea5e9;
+
+    padding:15px 40px;
 
     color:white;
 
-    padding:12px 30px;
-
-    border-radius:30px;
-
     text-decoration:none;
 
-}
+    border-radius:50px;
 
-
-
-
-/* Section */
-
-section{
-
-    padding:60px 50px;
-
-    text-align:center;
-
-}
-
-
-section h2{
-
-    font-size:32px;
-
-    margin-bottom:30px;
-
-}
-
-
-
-
-
-/* Services */
-
-
-.service-box{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
-
-    gap:25px;
-
-}
-
-
-
-.card{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:10px;
-
-    box-shadow:0 0 15px #ddd;
+    font-weight:bold;
 
     transition:.3s;
 
@@ -209,9 +199,93 @@ section h2{
 
 
 
+.btn:hover{
+
+    background:#0284c7;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* ===== SECTION ===== */
+
+
+section{
+
+    padding:80px 70px;
+
+}
+
+
+
+section h2{
+
+    text-align:center;
+
+    font-size:36px;
+
+    margin-bottom:45px;
+
+    color:#0f172a;
+
+}
+
+
+
+
+
+
+
+/* ===== SERVICE ===== */
+
+
+.service-box{
+
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+
+}
+
+
+
+.card{
+
+
+    background:white;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+    border-top:4px solid #0ea5e9;
+
+
+}
+
+
+
 .card:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-12px);
 
 }
 
@@ -219,11 +293,33 @@ section h2{
 
 .card i{
 
-    font-size:40px;
 
-    color:#008cff;
+    font-size:45px;
+
+    color:#0284c7;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.card h3{
 
     margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+
+
+
+.card p{
+
+    color:#64748b;
+
+    line-height:1.6;
 
 }
 
@@ -231,14 +327,53 @@ section h2{
 
 
 
-/* Contact Form */
+
+
+/* ===== ABOUT ===== */
+
+
+#about{
+
+    background:#f1f5f9;
+
+}
+
+
+
+#about p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    text-align:center;
+
+}
+
+
+
+
+
+/* ===== CONTACT ===== */
 
 
 form{
 
-    max-width:600px;
+    max-width:650px;
 
     margin:auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 30px #ddd;
 
 }
 
@@ -247,15 +382,18 @@ form{
 input,
 textarea{
 
+
     width:100%;
 
     padding:15px;
 
-    margin:10px 0;
+    margin-bottom:15px;
 
     border:1px solid #ddd;
 
-    border-radius:5px;
+    border-radius:8px;
+
+    font-size:16px;
 
 }
 
@@ -263,7 +401,7 @@ textarea{
 
 textarea{
 
-    height:120px;
+    height:130px;
 
 }
 
@@ -271,17 +409,29 @@ textarea{
 
 button{
 
-    background:#008cff;
+    width:100%;
+
+    padding:15px;
+
+    background:#0284c7;
 
     color:white;
 
     border:none;
 
-    padding:15px 35px;
+    border-radius:8px;
+
+    font-size:17px;
 
     cursor:pointer;
 
-    border-radius:5px;
+}
+
+
+
+button:hover{
+
+    background:#0369a1;
 
 }
 
@@ -289,19 +439,22 @@ button{
 
 
 
-/* Floating Buttons */
+
+
+/* ===== FLOAT BUTTON ===== */
 
 
 .whatsapp,
 .call{
 
+
     position:fixed;
 
     right:25px;
 
-    width:55px;
+    width:60px;
 
-    height:55px;
+    height:60px;
 
     border-radius:50%;
 
@@ -313,11 +466,11 @@ button{
 
     color:white;
 
-    font-size:25px;
-
-    text-decoration:none;
+    font-size:28px;
 
     z-index:999;
+
+    text-decoration:none;
 
 }
 
@@ -325,9 +478,9 @@ button{
 
 .whatsapp{
 
-    bottom:90px;
+    bottom:95px;
 
-    background:#25D366;
+    background:#22c55e;
 
 }
 
@@ -337,7 +490,7 @@ button{
 
     bottom:25px;
 
-    background:#0066ff;
+    background:#2563eb;
 
 }
 
@@ -350,7 +503,7 @@ button{
 
     right:25px;
 
-    bottom:160px;
+    bottom:165px;
 
     width:45px;
 
@@ -358,11 +511,9 @@ button{
 
     border-radius:50%;
 
-    background:#111;
+    background:#0f172a;
 
     color:white;
-
-    border:none;
 
     display:none;
 
@@ -372,7 +523,9 @@ button{
 
 
 
-/* Mobile Responsive */
+
+
+/* ===== MOBILE ===== */
 
 
 @media(max-width:768px){
@@ -380,11 +533,14 @@ button{
 
 .navbar{
 
-    padding:15px 20px;
+    padding:10px 20px;
 
     flex-direction:column;
 
+    height:auto;
+
 }
+
 
 
 .nav-links{
@@ -394,11 +550,10 @@ button{
 }
 
 
+
 .nav-links a{
 
     margin:10px;
-
-    display:inline-block;
 
 }
 
@@ -406,7 +561,15 @@ button{
 
 .hero-content h1{
 
-    font-size:30px;
+    font-size:32px;
+
+}
+
+
+
+.hero-content p{
+
+    font-size:17px;
 
 }
 
@@ -414,10 +577,9 @@ button{
 
 section{
 
-    padding:40px 20px;
+    padding:50px 20px;
 
 }
-
 
 
 }
