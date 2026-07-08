@@ -1,109 +1,26 @@
-// Mobile Menu Toggle
-
-function toggleMenu(){
-
-    const menu = document.querySelector(".nav-links");
-
-    menu.classList.toggle("active");
-
-}
+db.collection("products")
+.onSnapshot((snapshot)=>{
 
 
-// Back To Top Button
-
-const topBtn = document.getElementById("topBtn");
+let box=document.getElementById("productsData");
 
 
-window.onscroll = function(){
-
-    if(document.documentElement.scrollTop > 300){
-
-        topBtn.style.display = "block";
-
-    }else{
-
-        topBtn.style.display = "none";
-
-    }
-
-};
+box.innerHTML="";
 
 
-topBtn.onclick = function(){
+snapshot.forEach(doc=>{
 
-    window.scrollTo({
 
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-};
+let p=doc.data();
 
 
 
-// Scroll Animation
-
-const sections = document.querySelectorAll("section");
-
-
-window.addEventListener("scroll",()=>{
-
-    sections.forEach(section=>{
-
-        const position = section.getBoundingClientRect().top;
-
-        if(position < window.innerHeight - 100){
-
-            section.classList.add("show");
-
-        }
-
-    });
-
-});
-
-
-
-// Contact Form Alert
-
-const form = document.querySelector("form");
-
-
-if(form){
-
-form.addEventListener("submit",function(e){
-
-    e.preventDefault();
-
-    alert("Thank you! Your message has been sent successfully.");
-
-    form.reset();
-
-});
-    let products =
-JSON.parse(localStorage.getItem("products")) || [];
-
-
-let productBox =
-document.getElementById("productsData");
-
-
-if(productBox){
-
-
-products.forEach(p=>{
-
-
-productBox.innerHTML += `
-
+box.innerHTML += `
 
 <div class="card">
 
 
-<img src="${p.image}"
-class="product-img">
+<img src="${p.image}" class="product-img">
 
 
 <h3>${p.name}</h3>
@@ -112,10 +29,9 @@ class="product-img">
 <h4>${p.price}</h4>
 
 
-
 <a class="btn"
 
-href="https://wa.me/8801601689809?text=I want to order ${p.name}">
+href="https://wa.me/8801601689809?text=I want ${p.name}">
 
 Order Now
 
@@ -127,9 +43,8 @@ Order Now
 
 `;
 
+
 });
 
 
-}
-
-}
+});
