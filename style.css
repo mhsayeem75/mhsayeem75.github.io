@@ -115,7 +115,7 @@ body{
     rgba(14,165,233,.45)
     ),
 
-    url("background.jpg");
+   url("images/background.jpg")
 
 
     background-size:cover;
