@@ -1,8 +1,7 @@
 /* =========================
    Sayeem IT Solution
-   Professional CSS
+   Premium Professional CSS
 ========================= */
-
 
 *{
     margin:0;
@@ -11,11 +10,9 @@
     font-family:'Segoe UI',Arial,sans-serif;
 }
 
-
 html{
     scroll-behavior:smooth;
 }
-
 
 body{
     background:#f8fafc;
@@ -23,12 +20,13 @@ body{
 }
 
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 
 .navbar{
 
     width:100%;
     height:75px;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -44,6 +42,7 @@ body{
 }
 
 
+
 .logo{
 
     display:flex;
@@ -57,8 +56,11 @@ body{
 
     width:55px;
     height:55px;
+
     border-radius:50%;
+
     border:2px solid #38bdf8;
+
     object-fit:cover;
 
 }
@@ -76,9 +78,13 @@ body{
 .nav-links a{
 
     color:white;
+
     text-decoration:none;
-    margin-left:30px;
+
+    margin-left:25px;
+
     font-size:16px;
+
     transition:.3s;
 
 }
@@ -92,26 +98,35 @@ body{
 
 
 
-/* ===== HERO ===== */
+
+
+/* HERO */
 
 
 .hero{
 
     height:90vh;
 
+
     background:
+
     linear-gradient(
-    rgba(2,6,23,.75),
+    rgba(15,23,42,.75),
     rgba(14,165,233,.45)
     ),
+
     url("background.jpg");
 
 
     background-size:cover;
+
     background-position:center;
 
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     text-align:center;
@@ -126,51 +141,76 @@ body{
 
     max-width:850px;
 
+    animation:fadeIn 1.5s;
+
 }
+
+
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+
 
 
 .hero-content h1{
 
     font-size:55px;
+
     margin-bottom:20px;
 
 }
 
 
+
 .hero-content p{
 
     font-size:22px;
+
     margin-bottom:35px;
 
 }
 
 
+
+
 .btn{
 
-    display:inline-block;
+display:inline-block;
 
-    background:#0ea5e9;
+background:#0ea5e9;
 
-    color:white;
+color:white;
 
-    padding:14px 35px;
+padding:14px 35px;
 
-    border-radius:50px;
+border-radius:50px;
 
-    text-decoration:none;
+text-decoration:none;
 
-    font-weight:bold;
+font-weight:bold;
 
-    transition:.3s;
+transition:.3s;
 
 }
 
 
 .btn:hover{
 
-    background:#0284c7;
+background:#0284c7;
 
-    transform:translateY(-5px);
+transform:scale(1.05);
 
 }
 
@@ -178,26 +218,25 @@ body{
 
 
 
-/* ===== SECTION ===== */
+/* SECTIONS */
 
 
 section{
 
-    padding:80px 70px;
+padding:80px 70px;
 
 }
-
 
 
 section h2{
 
-    text-align:center;
+text-align:center;
 
-    font-size:36px;
+font-size:36px;
 
-    margin-bottom:45px;
+margin-bottom:45px;
 
-    color:#0f172a;
+color:#0f172a;
 
 }
 
@@ -205,18 +244,17 @@ section h2{
 
 
 
-
-/* ===== SERVICE & PRODUCT CARD ===== */
+/* CARDS */
 
 
 .service-box{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
 
-    gap:30px;
+gap:30px;
 
 }
 
@@ -224,20 +262,23 @@ section h2{
 
 .card{
 
-    background:white;
+background:white;
 
-    padding:30px 25px;
+padding:30px 25px;
 
-    text-align:center;
+text-align:center;
 
-    border-radius:15px;
+border-radius:15px;
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.08);
 
-    border-top:4px solid #0ea5e9;
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
 
-    transition:.4s;
+
+border-top:4px solid #0ea5e9;
+
+
+transition:.4s;
 
 }
 
@@ -245,29 +286,32 @@ section h2{
 
 .card:hover{
 
-    transform:translateY(-10px);
+transform:translateY(-12px);
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.15);
 
 }
+
 
 
 
 .card i{
 
-    font-size:45px;
+font-size:45px;
 
-    color:#0284c7;
+color:#0284c7;
 
-    margin-bottom:20px;
+margin-bottom:20px;
 
 }
 
 
-
 .card h3{
 
-    font-size:22px;
+font-size:22px;
 
-    margin-bottom:15px;
+margin-bottom:15px;
 
 }
 
@@ -275,346 +319,16 @@ section h2{
 
 .card p{
 
-    color:#64748b;
+color:#64748b;
 
-    line-height:1.6;
-
-}
-
-
-
-
-
-/* ===== PRODUCT SECTION ===== */
-
-
-#products{
-
-    background:#f1f5f9;
-
-}
-
-
-
-.product-img{
-
-    width:100%;
-
-    height:180px;
-
-    object-fit:cover;
-
-    border-radius:10px;
-
-    margin-bottom:15px;
-
-}
-
-
-
-.card h4{
-
-    margin:15px 0;
-
-    color:#0284c7;
+line-height:1.6;
 
 }
 
 
 
 
-
-/* ===== ABOUT ===== */
-
-
-#about{
-
-    background:#e2e8f0;
-
-}
-
-
-
-#about p{
-
-    max-width:850px;
-
-    margin:auto;
-
-    text-align:center;
-
-    font-size:18px;
-
-    line-height:1.8;
-
-}
-
-
-
-
-
-/* ===== CONTACT ===== */
-
-
-form{
-
-    max-width:650px;
-
-    margin:auto;
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:15px;
-
-    box-shadow:0 10px 30px #ddd;
-
-}
-
-
-
-input,
-textarea{
-
-    width:100%;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    border:1px solid #ddd;
-
-    border-radius:8px;
-
-}
-
-
-
-textarea{
-
-    height:130px;
-
-}
-
-
-
-button{
-
-    width:100%;
-
-    padding:15px;
-
-    background:#0284c7;
-
-    color:white;
-
-    border:none;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
-    font-size:17px;
-
-}
-
-
-
-button:hover{
-
-    background:#0369a1;
-
-}
-
-
-
-
-
-
-
-/* ===== FOOTER ===== */
-
-
-footer{
-
-    background:#0f172a;
-
-    color:white;
-
-    text-align:center;
-
-    padding:30px;
-
-}
-
-
-
-footer h3{
-
-    margin-bottom:10px;
-
-}
-
-
-
-
-
-
-
-/* ===== FLOATING BUTTON ===== */
-
-
-.whatsapp,
-.call{
-
-    position:fixed;
-
-    right:25px;
-
-    width:60px;
-
-    height:60px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:white;
-
-    font-size:28px;
-
-    text-decoration:none;
-
-    z-index:999;
-
-}
-
-
-
-.whatsapp{
-
-    bottom:90px;
-
-    background:#22c55e;
-
-}
-
-
-
-.call{
-
-    bottom:20px;
-
-    background:#2563eb;
-
-}
-
-
-
-
-#topBtn{
-
-    position:fixed;
-
-    right:25px;
-
-    bottom:160px;
-
-    width:45px;
-
-    height:45px;
-
-    border-radius:50%;
-
-    background:#0f172a;
-
-    color:white;
-
-    border:none;
-
-}
-
-
-
-
-
-
-
-/* ===== MOBILE RESPONSIVE ===== */
-
-
-@media(max-width:768px){
-
-
-.navbar{
-
-    flex-direction:column;
-
-    height:auto;
-
-    padding:15px 20px;
-
-}
-
-
-
-.nav-links{
-
-    margin-top:15px;
-
-}
-
-
-
-.nav-links a{
-
-    margin:10px;
-
-    display:inline-block;
-
-}
-
-
-
-.hero-content h1{
-
-    font-size:32px;
-
-}
-
-
-
-.hero-content p{
-
-    font-size:17px;
-
-}
-
-
-
-section{
-
-    padding:50px 20px;
-
-}
-.product-img{
-
-width:100%;
-
-height:200px;
-
-object-fit:cover;
-
-border-radius:10px;
-
-margin-bottom:15px;
-
-}
+/* PRODUCTS */
 
 
 #products{
@@ -624,12 +338,331 @@ background:#f1f5f9;
 }
 
 
-.card h4{
 
-color:#0284c7;
+.product-img{
+
+width:100%;
+
+height:180px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+margin-bottom:15px;
+
+transition:.4s;
+
+}
+
+
+
+.product-img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+.card h4{
 
 margin:15px 0;
 
+color:#0284c7;
+
 }
+
+
+
+
+/* ABOUT */
+
+
+#about{
+
+background:#e2e8f0;
+
+}
+
+
+#about p{
+
+max-width:850px;
+
+margin:auto;
+
+text-align:center;
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+
+
+
+/* CONTACT */
+
+
+form{
+
+max-width:650px;
+
+margin:auto;
+
+background:white;
+
+padding:35px;
+
+border-radius:15px;
+
+box-shadow:0 10px 30px #ddd;
+
+}
+
+
+
+input,
+textarea{
+
+width:100%;
+
+padding:15px;
+
+margin-bottom:15px;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+font-size:16px;
+
+}
+
+
+textarea{
+
+height:130px;
+
+}
+
+
+
+button{
+
+width:100%;
+
+padding:15px;
+
+background:#0284c7;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-size:17px;
+
+}
+
+
+
+button:hover{
+
+background:#0369a1;
+
+}
+
+
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#0f172a;
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+
+
+
+
+/* FLOAT BUTTON */
+
+
+.whatsapp,
+.call{
+
+position:fixed;
+
+right:25px;
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:white;
+
+font-size:28px;
+
+text-decoration:none;
+
+z-index:999;
+
+}
+
+
+
+.whatsapp{
+
+bottom:90px;
+
+background:#22c55e;
+
+}
+
+
+
+.call{
+
+bottom:20px;
+
+background:#2563eb;
+
+}
+
+
+
+#topBtn{
+
+position:fixed;
+
+right:25px;
+
+bottom:160px;
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+background:#0f172a;
+
+color:white;
+
+border:none;
+
+}
+
+
+
+
+
+/* MOBILE */
+
+
+@media(max-width:768px){
+
+
+.navbar{
+
+flex-direction:column;
+
+height:auto;
+
+padding:15px 20px;
+
+}
+
+
+
+.nav-links{
+
+text-align:center;
+
+margin-top:15px;
+
+}
+
+
+
+.nav-links a{
+
+display:inline-block;
+
+margin:8px;
+
+}
+
+
+
+.hero{
+
+height:80vh;
+
+}
+
+
+
+.hero-content h1{
+
+font-size:32px;
+
+}
+
+
+
+.hero-content p{
+
+font-size:17px;
+
+}
+
+
+
+section{
+
+padding:50px 20px;
+
+}
+
+
+section h2{
+
+font-size:28px;
+
+}
+
+
+.product-img{
+
+height:200px;
+
+}
+
 
 }
