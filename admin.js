@@ -1,110 +1,35 @@
-let products = JSON.parse(localStorage.getItem("products")) || [];
+function addProduct(){
 
 
-document.getElementById("productForm")
-.addEventListener("submit",function(e){
+let name =
+document.getElementById("name").value;
 
 
-e.preventDefault();
+let price =
+document.getElementById("price").value;
 
 
-
-let product={
-
-name:document.getElementById("name").value,
-
-price:document.getElementById("price").value,
-
-image:document.getElementById("image").value
-
-};
+let image =
+document.getElementById("image").value;
 
 
 
-products.push(product);
+db.collection("products").add({
+
+name:name,
+
+price:price,
+
+image:image
+
+})
 
 
-
-localStorage.setItem(
-"products",
-JSON.stringify(products)
-);
-
-
+.then(()=>{
 
 alert("Product Added Successfully");
 
-
-location.reload();
-
-
-});
-
-
-
-
-function showProducts(){
-
-
-let box=document.getElementById("productList");
-
-
-products.forEach((p,index)=>{
-
-
-box.innerHTML += `
-
-
-<div class="card">
-
-
-<img src="${p.image}"
-class="product-img">
-
-
-<h3>${p.name}</h3>
-
-
-<h4>${p.price}</h4>
-
-
-<button onclick="deleteProduct(${index})">
-
-Delete
-
-</button>
-
-
-</div>
-
-
-`;
-
-
 });
 
 
 }
-
-
-
-function deleteProduct(index){
-
-
-products.splice(index,1);
-
-
-localStorage.setItem(
-"products",
-JSON.stringify(products)
-);
-
-
-location.reload();
-
-
-}
-
-
-
-showProducts();
