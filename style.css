@@ -1,165 +1,850 @@
+/* ===================================
+   Sayeem IT Solution
+   Professional Style CSS
+=================================== */
 
-// ===============================
-// Sayeem IT Solution
-// Firebase Product Load System
-// ===============================
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Arial,sans-serif;
+}
 
 
-// LOAD PRODUCTS FROM FIRESTORE
+html{
+    scroll-behavior:smooth;
+}
 
-db.collection("products").onSnapshot((snapshot)=>{
 
+body{
+    background:#f8fafc;
+    color:#1e293b;
+}
 
-    let productsBox = document.getElementById("productsData");
 
 
-    if(!productsBox){
-        return;
-    }
 
 
-    productsBox.innerHTML = "";
+/* ================= NAVBAR ================= */
 
 
-    snapshot.forEach((doc)=>{
+.navbar{
 
+    width:100%;
+    height:75px;
 
-        let product = doc.data();
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
+    padding:0 70px;
 
+    background:#0f172a;
 
-        productsBox.innerHTML += `
+    position:sticky;
+    top:0;
 
-        <div class="card">
+    z-index:999;
 
+}
 
-            <img src="${product.image}" 
-            class="product-img"
-            alt="${product.name}">
 
 
-            <h3>
-            ${product.name}
-            </h3>
+.logo{
 
+    display:flex;
+    align-items:center;
+    gap:15px;
 
-            <p>
-            IT Product
-            </p>
+}
 
 
-            <h4>
-            Price: ${product.price}
-            </h4>
 
+.logo img{
 
+    width:55px;
+    height:55px;
 
-            <a class="btn"
+    border-radius:50%;
 
-            href="https://wa.me/8801601689809?text=Hello%20Sayeem%20IT%20Solution,%20I%20want%20to%20order%20${product.name}">
+    border:2px solid #38bdf8;
 
-            Order Now
+    object-fit:cover;
 
-            </a>
+}
 
 
 
-        </div>
+.logo h2{
 
+    color:white;
 
-        `;
+    font-size:22px;
 
+}
 
-    });
 
 
 
-});
 
+.nav-links a{
 
+    color:white;
 
+    text-decoration:none;
 
+    margin-left:30px;
 
+    font-size:16px;
 
+    transition:.3s;
 
-// ===============================
-// PAGE LOADER
-// ===============================
+}
 
 
-window.addEventListener("load",()=>{
 
+.nav-links a:hover{
 
-    let loader = document.getElementById("loader");
+    color:#38bdf8;
 
+}
 
-    if(loader){
 
-        loader.style.display="none";
 
-    }
 
 
-});
 
 
 
+/* ================= LOADER ================= */
 
 
+#loader{
 
+    position:fixed;
 
-// ===============================
-// BACK TO TOP BUTTON
-// ===============================
+    width:100%;
 
+    height:100vh;
 
-let topBtn = document.getElementById("topBtn");
+    background:white;
 
+    display:flex;
 
+    justify-content:center;
 
-window.onscroll = function(){
+    align-items:center;
 
+    flex-direction:column;
 
-    if(window.scrollY > 300){
+    z-index:9999;
 
+}
 
-        topBtn.style.display="block";
 
 
-    }
+#loader img{
 
-    else{
+    width:90px;
 
+    height:90px;
 
-        topBtn.style.display="none";
+    border-radius:50%;
 
+}
 
-    }
 
 
-};
+#loader h3{
 
+    margin-top:15px;
 
+    color:#0284c7;
 
+}
 
 
-if(topBtn){
 
 
-topBtn.onclick=function(){
 
 
-window.scrollTo({
 
-top:0,
 
-behavior:"smooth"
 
-});
+/* ================= HERO ================= */
 
 
-};
+.hero{
+
+
+height:90vh;
+
+
+background:
+
+linear-gradient(
+
+rgba(2,6,23,.75),
+
+rgba(14,165,233,.45)
+
+),
+
+url("images/background.jpg");
+
+
+
+background-size:cover;
+
+background-position:center;
+
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+
+
+text-align:center;
+
+color:white;
+
+
+}
+
+
+
+
+.hero-content{
+
+max-width:850px;
+
+}
+
+
+
+.hero-content h1{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.hero-content p{
+
+font-size:22px;
+
+margin-bottom:35px;
+
+}
+
+
+
+
+
+
+
+/* ================= BUTTON ================= */
+
+
+.btn{
+
+display:inline-block;
+
+background:#0ea5e9;
+
+color:white;
+
+padding:14px 35px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+
+
+.btn:hover{
+
+background:#0284c7;
+
+transform:translateY(-5px);
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= SECTION ================= */
+
+
+section{
+
+padding:80px 70px;
+
+}
+
+
+
+section h2{
+
+text-align:center;
+
+font-size:36px;
+
+margin-bottom:45px;
+
+color:#0f172a;
+
+}
+
+
+
+
+
+
+
+
+/* ================= CARD ================= */
+
+
+.service-box{
+
+
+display:grid;
+
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+
+gap:30px;
+
+
+}
+
+
+
+
+
+.card{
+
+
+background:white;
+
+
+padding:30px 25px;
+
+
+text-align:center;
+
+
+border-radius:15px;
+
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.08);
+
+
+
+border-top:4px solid #0ea5e9;
+
+
+transition:.4s;
+
+
+}
+
+
+
+.card:hover{
+
+
+transform:translateY(-10px);
+
+
+}
+
+
+
+
+
+
+.card i{
+
+
+font-size:45px;
+
+
+color:#0284c7;
+
+
+margin-bottom:20px;
+
+
+}
+
+
+
+.card h3{
+
+font-size:22px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.card p{
+
+color:#64748b;
+
+line-height:1.6;
+
+}
+
+
+
+
+
+
+
+/* ================= PRODUCTS ================= */
+
+
+#products{
+
+background:#f1f5f9;
+
+}
+
+
+
+.product-img{
+
+
+width:100%;
+
+
+height:180px;
+
+
+object-fit:cover;
+
+
+border-radius:10px;
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
+.card h4{
+
+
+margin:15px 0;
+
+color:#0284c7;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= ABOUT ================= */
+
+
+#about{
+
+background:#e2e8f0;
+
+}
+
+
+
+#about p{
+
+
+max-width:850px;
+
+
+margin:auto;
+
+
+text-align:center;
+
+
+font-size:18px;
+
+
+line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= CONTACT ================= */
+
+
+
+form{
+
+
+max-width:650px;
+
+
+margin:auto;
+
+
+background:white;
+
+
+padding:35px;
+
+
+border-radius:15px;
+
+
+box-shadow:0 10px 30px #ddd;
+
+
+}
+
+
+
+input,
+textarea{
+
+
+width:100%;
+
+
+padding:15px;
+
+
+margin-bottom:15px;
+
+
+border:1px solid #ddd;
+
+
+border-radius:8px;
+
+
+}
+
+
+
+textarea{
+
+height:130px;
+
+}
+
+
+
+button{
+
+
+width:100%;
+
+
+padding:15px;
+
+
+background:#0284c7;
+
+
+color:white;
+
+
+border:none;
+
+
+border-radius:8px;
+
+
+cursor:pointer;
+
+
+font-size:17px;
+
+
+}
+
+
+
+button:hover{
+
+
+background:#0369a1;
+
+
+}
+
+
+
+
+
+
+
+
+/* ================= FOOTER ================= */
+
+
+footer{
+
+
+background:#0f172a;
+
+
+color:white;
+
+
+text-align:center;
+
+
+padding:30px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ================= FLOAT BUTTON ================= */
+
+
+.whatsapp,
+.call{
+
+
+position:fixed;
+
+
+right:25px;
+
+
+width:60px;
+
+
+height:60px;
+
+
+border-radius:50%;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+color:white;
+
+
+font-size:28px;
+
+
+text-decoration:none;
+
+
+z-index:999;
+
+
+}
+
+
+
+.whatsapp{
+
+
+bottom:90px;
+
+
+background:#22c55e;
+
+
+}
+
+
+
+.call{
+
+
+bottom:20px;
+
+
+background:#2563eb;
+
+
+}
+
+
+
+
+
+
+
+#topBtn{
+
+
+position:fixed;
+
+
+right:25px;
+
+
+bottom:160px;
+
+
+width:45px;
+
+
+height:45px;
+
+
+border-radius:50%;
+
+
+background:#0f172a;
+
+
+color:white;
+
+
+border:none;
+
+
+display:none;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= MOBILE ================= */
+
+
+@media(max-width:768px){
+
+
+
+.navbar{
+
+
+flex-direction:column;
+
+
+height:auto;
+
+
+padding:15px 20px;
+
+
+}
+
+
+
+.nav-links{
+
+
+margin-top:15px;
+
+
+}
+
+
+
+.nav-links a{
+
+
+margin:10px;
+
+
+display:inline-block;
+
+
+}
+
+
+
+.hero-content h1{
+
+
+font-size:32px;
+
+
+}
+
+
+
+.hero-content p{
+
+
+font-size:17px;
+
+
+}
+
+
+
+section{
+
+
+padding:50px 20px;
+
+
+}
+
 
 
 }
