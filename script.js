@@ -1,99 +1,189 @@
 // ===================================
 // Sayeem IT Solution
-// Complete Script File
+// Default + Firebase Product System
 // ===================================
 
 
-// ================================
+// DEFAULT PRODUCTS
+
+const defaultProducts = [
+
+{
+name:"Desktop Computer",
+price:"35,000৳ থেকে",
+image:"images/computer.jpg"
+},
+
+{
+name:"Laptop",
+price:"45,000৳ থেকে",
+image:"images/laptop.jpg"
+},
+
+{
+name:"Attendance Machine",
+price:"8,000৳ থেকে",
+image:"images/attendance.jpg"
+},
+
+{
+name:"CCTV Camera",
+price:"3,500৳ থেকে",
+image:"images/cctv.jpg"
+},
+
+{
+name:"WiFi Router",
+price:"1,500৳ থেকে",
+image:"images/router.jpg"
+},
+
+{
+name:"Computer Accessories",
+price:"Contact Us",
+image:"images/computer-accessories.jpg"
+},
+
+{
+name:"Phone Accessories",
+price:"Contact Us",
+image:"images/phone-accessories.jpg"
+}
+
+];
+
+
+
+
+// SHOW PRODUCT FUNCTION
+
+function showProducts(products){
+
+let box=document.getElementById("productsData");
+
+if(!box) return;
+
+
+box.innerHTML="";
+
+
+products.forEach(product=>{
+
+
+box.innerHTML += `
+
+
+<div class="card">
+
+
+<img src="${product.image}"
+class="product-img"
+alt="${product.name}">
+
+
+
+<h3>${product.name}</h3>
+
+
+<p>
+Sayeem IT Solution Quality Product
+</p>
+
+
+
+<h4>
+Price: ${product.price}
+</h4>
+
+
+
+<a class="btn"
+target="_blank"
+href="https://wa.me/8801601689809?text=I want to order ${product.name}">
+
+Order Now
+
+</a>
+
+
+</div>
+
+
+
+`;
+
+
+});
+
+
+}
+
+
+
+// SHOW DEFAULT PRODUCT
+
+showProducts(defaultProducts);
+
+
+
+
+
+
 // FIREBASE PRODUCT LOAD
-// ================================
-
-if (typeof db !== "undefined") {
-
-    db.collection("products").onSnapshot((snapshot)=>{
-
-        const productsBox = document.getElementById("productsData");
-
-        if(!productsBox) return;
 
 
-        productsBox.innerHTML = "";
+if(typeof db !== "undefined"){
 
 
-        snapshot.forEach((doc)=>{
-
-            const product = doc.data();
+db.collection("products").onSnapshot(snapshot=>{
 
 
-            productsBox.innerHTML += `
-
-            <div class="card">
-
-                <img src="${product.image}"
-                class="product-img"
-                alt="${product.name}"
-                onerror="this.style.display='none'">
+let firebaseProducts=[];
 
 
-                <h3>${product.name}</h3>
+snapshot.forEach(doc=>{
 
 
-                <p>
-                Sayeem IT Solution Quality Product
-                </p>
+firebaseProducts.push(doc.data());
 
 
-                <h4>
-                Price: ${product.price}
-                </h4>
+});
 
 
-                <a class="btn"
-                target="_blank"
-                href="https://wa.me/8801601689809?text=Hello%20Sayeem%20IT%20Solution,%20I%20want%20to%20order%20${product.name}">
+// Default + Firebase merge
 
-                Order Now
-
-                </a>
-
-
-            </div>
-
-            `;
+showProducts([
+...defaultProducts,
+...firebaseProducts
+]);
 
 
-        });
-
-
-    });
+});
 
 
 }
-else{
-
-    console.log("Firebase database not connected");
-
-}
 
 
 
 
 
 
-// ================================
-// PAGE LOADER
-// ================================
+
+// LOADER
+
 
 window.addEventListener("load",()=>{
 
-    const loader = document.getElementById("loader");
+
+let loader=document.getElementById("loader");
 
 
-    if(loader){
+if(loader){
 
-        loader.style.display="none";
+loader.style.display="none";
 
-    }
+}
+
 
 });
 
@@ -102,88 +192,51 @@ window.addEventListener("load",()=>{
 
 
 
-// ================================
-// BACK TO TOP BUTTON
-// ================================
+// TOP BUTTON
 
-const topBtn = document.getElementById("topBtn");
+
+let topBtn=document.getElementById("topBtn");
 
 
 if(topBtn){
 
 
-    topBtn.style.display="none";
+topBtn.style.display="none";
 
 
-    window.addEventListener("scroll",()=>{
+window.addEventListener("scroll",()=>{
 
 
-        if(window.scrollY > 300){
+if(window.scrollY>300){
 
-            topBtn.style.display="block";
+topBtn.style.display="block";
 
-        }
-        else{
+}
 
-            topBtn.style.display="none";
+else{
 
-        }
-
-
-    });
-
-
-
-    topBtn.addEventListener("click",()=>{
-
-
-        window.scrollTo({
-
-            top:0,
-
-            behavior:"smooth"
-
-        });
-
-
-    });
-
+topBtn.style.display="none";
 
 }
 
 
+});
 
 
 
-
-// ================================
-// SMOOTH MENU SCROLL
-// ================================
-
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
+topBtn.onclick=()=>{
 
 
-    link.addEventListener("click",function(e){
+window.scrollTo({
 
+top:0,
 
-        const target = document.querySelector(this.getAttribute("href"));
-
-
-        if(target){
-
-            e.preventDefault();
-
-
-            target.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
-
-        }
-
-
-    });
-
+behavior:"smooth"
 
 });
+
+
+};
+
+
+}
