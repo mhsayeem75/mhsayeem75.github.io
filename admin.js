@@ -1,43 +1,44 @@
-let products = [];
+let products = JSON.parse(localStorage.getItem("products")) || [];
 
 
-const form = document.getElementById("productForm");
+document.getElementById("productForm")
+.addEventListener("submit",function(e){
 
-const list = document.getElementById("productList");
-
-const total = document.getElementById("totalProduct");
-
-
-
-form.addEventListener("submit",function(e){
 
 e.preventDefault();
 
 
+
 let product={
 
-name:document.getElementById("productName").value,
+name:document.getElementById("name").value,
 
-price:document.getElementById("productPrice").value,
+price:document.getElementById("price").value,
 
-image:document.getElementById("productImage").value,
-
-desc:document.getElementById("productDesc").value
+image:document.getElementById("image").value
 
 };
+
 
 
 products.push(product);
 
 
-showProducts();
+
+localStorage.setItem(
+"products",
+JSON.stringify(products)
+);
 
 
-form.reset();
+
+alert("Product Added Successfully");
+
+
+location.reload();
 
 
 });
-
 
 
 
@@ -45,21 +46,27 @@ form.reset();
 function showProducts(){
 
 
-list.innerHTML="";
+let box=document.getElementById("productList");
 
 
-products.forEach((item,index)=>{
+products.forEach((p,index)=>{
 
 
-list.innerHTML += `
+box.innerHTML += `
 
-<tr>
 
-<td>${item.name}</td>
+<div class="card">
 
-<td>${item.price}</td>
 
-<td>
+<img src="${p.image}"
+class="product-img">
+
+
+<h3>${p.name}</h3>
+
+
+<h4>${p.price}</h4>
+
 
 <button onclick="deleteProduct(${index})">
 
@@ -67,9 +74,9 @@ Delete
 
 </button>
 
-</td>
 
-</tr>
+</div>
+
 
 `;
 
@@ -77,18 +84,27 @@ Delete
 });
 
 
-total.innerHTML=products.length;
-
-
 }
-
 
 
 
 function deleteProduct(index){
 
+
 products.splice(index,1);
 
-showProducts();
+
+localStorage.setItem(
+"products",
+JSON.stringify(products)
+);
+
+
+location.reload();
+
 
 }
+
+
+
+showProducts();
