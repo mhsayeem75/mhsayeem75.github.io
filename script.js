@@ -1,88 +1,211 @@
+// ===================================
+// Sayeem IT Solution
+// Complete Script File
+// ===================================
+
+
+
+// ================================
+// FIREBASE PRODUCT LOAD
+// ================================
+
+if (typeof db !== "undefined") {
+
+
 db.collection("products").onSnapshot((snapshot)=>{
 
-let products = document.getElementById("productsData");
 
-products.innerHTML = "";
-
-
-snapshot.forEach((doc)=>{
-
-let data = doc.data();
+    const productsBox = document.getElementById("productsData");
 
 
-products.innerHTML += `
-
-<div class="card">
-
-<img src="${data.image}" class="product-img">
+    if(!productsBox) return;
 
 
-<h3>${data.name}</h3>
+    productsBox.innerHTML = "";
 
 
-<h4>${data.price}</h4>
+    snapshot.forEach((doc)=>{
 
 
-<a class="btn"
-href="https://wa.me/8801601689809?text=I want to order ${data.name}">
-
-Order Now
-
-</a>
+        const product = doc.data();
 
 
-</div>
 
-`;
+        productsBox.innerHTML += `
+
+        <div class="card">
+
+
+        <img src="${product.image}"
+        class="product-img"
+        onerror="this.src='images/no-image.png'"
+        alt="${product.name}">
+
+
+        <h3>${product.name}</h3>
+
+
+        <p>
+        Sayeem IT Solution Quality Product
+        </p>
+
+
+        <h4>
+        Price: ${product.price}
+        </h4>
+
+
+        <a class="btn"
+        target="_blank"
+        href="https://wa.me/8801601689809?text=Hello Sayeem IT Solution, I want to order ${product.name}">
+
+        Order Now
+
+        </a>
+
+
+        </div>
+
+        `;
+
+
+    });
+
+
+});
+
+
+}
+
+else{
+
+console.log("Firebase database not connected");
+
+}
+
+
+
+
+
+
+
+// ================================
+// PAGE LOADER
+// ================================
+
+
+window.addEventListener("load",()=>{
+
+
+const loader=document.getElementById("loader");
+
+
+if(loader){
+
+
+loader.style.display="none";
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+// ================================
+// BACK TO TOP
+// ================================
+
+
+const topBtn=document.getElementById("topBtn");
+
+
+if(topBtn){
+
+
+topBtn.style.display="none";
+
+
+window.addEventListener("scroll",()=>{
+
+
+if(window.scrollY > 300){
+
+
+topBtn.style.display="block";
+
+
+}
+
+else{
+
+
+topBtn.style.display="none";
+
+
+}
+
+
+});
+
+
+
+topBtn.addEventListener("click",()=>{
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
 
 });
 
 
 });
-db.collection("products")
-.onSnapshot((snapshot)=>{
 
 
-let box=document.getElementById("productsData");
-
-
-box.innerHTML="";
-
-
-snapshot.forEach(doc=>{
-
-
-let p=doc.data();
+}
 
 
 
-box.innerHTML += `
-
-<div class="card">
 
 
-<img src="${p.image}" class="product-img">
 
 
-<h3>${p.name}</h3>
+// ================================
+// SMOOTH MENU SCROLL
+// ================================
 
 
-<h4>${p.price}</h4>
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
 
-<a class="btn"
-
-href="https://wa.me/8801601689809?text=I want ${p.name}">
-
-Order Now
-
-</a>
+link.addEventListener("click",function(e){
 
 
-</div>
+let target=document.querySelector(this.getAttribute("href"));
 
 
-`;
+if(target){
+
+
+e.preventDefault();
+
+
+target.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+}
 
 
 });
