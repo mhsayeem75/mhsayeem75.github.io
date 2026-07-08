@@ -1,12 +1,25 @@
+// Firebase Configuration
+
 const firebaseConfig = {
-  apiKey: "আপনার key",
-  authDomain: "আপনার domain",
-  projectId: "আপনার project id",
-  storageBucket: "আপনার bucket",
-  messagingSenderId: "আপনার id",
-  appId: "আপনার app id"
+
+  apiKey: "YOUR_API_KEY",
+
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+
+  projectId: "YOUR_PROJECT_ID",
+
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+
+  appId: "YOUR_APP_ID"
+
 };
 
+
+// Initialize Firebase
+
 firebase.initializeApp(firebaseConfig);
+
+
+// Firestore Database
 
 const db = firebase.firestore();
