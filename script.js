@@ -82,5 +82,54 @@ form.addEventListener("submit",function(e){
     form.reset();
 
 });
+    let products =
+JSON.parse(localStorage.getItem("products")) || [];
+
+
+let productBox =
+document.getElementById("productsData");
+
+
+if(productBox){
+
+
+products.forEach(p=>{
+
+
+productBox.innerHTML += `
+
+
+<div class="card">
+
+
+<img src="${p.image}"
+class="product-img">
+
+
+<h3>${p.name}</h3>
+
+
+<h4>${p.price}</h4>
+
+
+
+<a class="btn"
+
+href="https://wa.me/8801601689809?text=I want to order ${p.name}">
+
+Order Now
+
+</a>
+
+
+</div>
+
+
+`;
+
+});
+
+
+}
 
 }
