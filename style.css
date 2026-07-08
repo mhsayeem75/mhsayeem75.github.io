@@ -322,5 +322,70 @@ font-size:30px;
     background:#003b8e;
 }
 
+/* Why Choose Us */
 
+#why{
+    padding:60px 20px;
+    text-align:center;
+    background:#eef5ff;
+}
+
+.why-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:30px;
+}
+
+.why-box{
+    width:250px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+/* Statistics */
+
+#stats{
+    background:#0056b3;
+    color:white;
+    padding:60px 20px;
+}
+
+.stats-container{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:40px;
+    text-align:center;
+}
+
+.stat h2{
+    font-size:42px;
+}
+
+/* Map */
+
+#map{
+    padding:60px 20px;
+    text-align:center;
+}
+
+/* Social */
+
+#social{
+    text-align:center;
+    padding:50px;
+}
+
+#social a{
+    display:inline-block;
+    margin:10px;
+    text-decoration:none;
+    color:#0056b3;
+    font-size:20px;
+    font-weight:bold;
+}
 }
