@@ -4,85 +4,76 @@
 // ===================================
 
 
-
 // ================================
 // FIREBASE PRODUCT LOAD
 // ================================
 
 if (typeof db !== "undefined") {
 
+    db.collection("products").onSnapshot((snapshot)=>{
 
-db.collection("products").onSnapshot((snapshot)=>{
+        const productsBox = document.getElementById("productsData");
 
-
-    const productsBox = document.getElementById("productsData");
-
-
-    if(!productsBox) return;
+        if(!productsBox) return;
 
 
-    productsBox.innerHTML = "";
+        productsBox.innerHTML = "";
 
 
-    snapshot.forEach((doc)=>{
+        snapshot.forEach((doc)=>{
+
+            const product = doc.data();
 
 
-        const product = doc.data();
+            productsBox.innerHTML += `
+
+            <div class="card">
+
+                <img src="${product.image}"
+                class="product-img"
+                alt="${product.name}"
+                onerror="this.style.display='none'">
 
 
-
-        productsBox.innerHTML += `
-
-        <div class="card">
+                <h3>${product.name}</h3>
 
 
-        <img src="${product.image}"
-        class="product-img"
-        onerror="this.src='images/no-image.png'"
-        alt="${product.name}">
+                <p>
+                Sayeem IT Solution Quality Product
+                </p>
 
 
-        <h3>${product.name}</h3>
+                <h4>
+                Price: ${product.price}
+                </h4>
 
 
-        <p>
-        Sayeem IT Solution Quality Product
-        </p>
+                <a class="btn"
+                target="_blank"
+                href="https://wa.me/8801601689809?text=Hello%20Sayeem%20IT%20Solution,%20I%20want%20to%20order%20${product.name}">
+
+                Order Now
+
+                </a>
 
 
-        <h4>
-        Price: ${product.price}
-        </h4>
+            </div>
+
+            `;
 
 
-        <a class="btn"
-        target="_blank"
-        href="https://wa.me/8801601689809?text=Hello Sayeem IT Solution, I want to order ${product.name}">
-
-        Order Now
-
-        </a>
-
-
-        </div>
-
-        `;
+        });
 
 
     });
 
 
-});
-
-
 }
-
 else{
 
-console.log("Firebase database not connected");
+    console.log("Firebase database not connected");
 
 }
-
 
 
 
@@ -93,21 +84,16 @@ console.log("Firebase database not connected");
 // PAGE LOADER
 // ================================
 
-
 window.addEventListener("load",()=>{
 
-
-const loader=document.getElementById("loader");
-
-
-if(loader){
+    const loader = document.getElementById("loader");
 
 
-loader.style.display="none";
+    if(loader){
 
+        loader.style.display="none";
 
-}
-
+    }
 
 });
 
@@ -116,62 +102,54 @@ loader.style.display="none";
 
 
 
-
 // ================================
-// BACK TO TOP
+// BACK TO TOP BUTTON
 // ================================
 
-
-const topBtn=document.getElementById("topBtn");
+const topBtn = document.getElementById("topBtn");
 
 
 if(topBtn){
 
 
-topBtn.style.display="none";
+    topBtn.style.display="none";
 
 
-window.addEventListener("scroll",()=>{
+    window.addEventListener("scroll",()=>{
 
 
-if(window.scrollY > 300){
+        if(window.scrollY > 300){
+
+            topBtn.style.display="block";
+
+        }
+        else{
+
+            topBtn.style.display="none";
+
+        }
 
 
-topBtn.style.display="block";
-
-
-}
-
-else{
-
-
-topBtn.style.display="none";
-
-
-}
-
-
-});
+    });
 
 
 
-topBtn.addEventListener("click",()=>{
+    topBtn.addEventListener("click",()=>{
 
 
-window.scrollTo({
+        window.scrollTo({
 
-top:0,
+            top:0,
 
-behavior:"smooth"
+            behavior:"smooth"
 
-});
+        });
 
 
-});
+    });
 
 
 }
-
 
 
 
@@ -182,33 +160,30 @@ behavior:"smooth"
 // SMOOTH MENU SCROLL
 // ================================
 
-
 document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
 
-link.addEventListener("click",function(e){
+    link.addEventListener("click",function(e){
 
 
-let target=document.querySelector(this.getAttribute("href"));
+        const target = document.querySelector(this.getAttribute("href"));
 
 
-if(target){
+        if(target){
+
+            e.preventDefault();
 
 
-e.preventDefault();
+            target.scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+        }
 
 
-target.scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-
-}
-
-
-});
+    });
 
 
 });
