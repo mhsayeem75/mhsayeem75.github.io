@@ -79,7 +79,7 @@ header {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    flex-shrink: 0; /* লোগো ইমেজ যেন চ্যাপ্টা না হয়ে যায় */
+    flex-shrink: 0;
 }
 
 .logo h2 {
@@ -181,24 +181,14 @@ header {
 }
 
 /* ==========================================================================
-   5. HERO & SLIDER (PERMANENT TEXT OVERLAP FIX)
+   5. HERO BACKROUND IMAGE FIX (NEW ADDED)
    ========================================================================== */
 .hero {
     position: relative;
-    height: 380px; /* মোবাইলের জন্য চমৎকার সাইজ */
+    height: 380px; /* মোবাইলের জন্য পারফেক্ট সাইজ */
     width: 100%;
     overflow: hidden;
-    background: linear-gradient(135px, #1e293b, #0f172a); /* ইমেজ না পেলেও প্রিমিয়াম লুক দিবে */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   /* ================= HERO BACKGROUND PHOTO FIX ================= */
-.hero {
-    position: relative;
-    height: 380px;
-    width: 100%;
-    overflow: hidden;
-    /* আপনার bg.jpg ছবি এবং ডার্ক ওভারলে ইফেক্ট এখানে যোগ করা হলো */
+    /* এখানে আপনার bg.jpg এবং টেক্সট ক্লিয়ার রাখার জন্য ডার্ক ওভারলে দেওয়া হয়েছে */
     background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('images/bg.jpg');
     background-size: cover;
     background-position: center;
@@ -206,37 +196,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-}
-
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-    opacity: 0.4; /* ব্যাকগ্রাউন্ড ইমেজের ডার্কনেস ব্যালেন্স */
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    font-size: 0; /* ইমেজ ব্রোকেন থাকলে অল্টারনেটিভ কুৎসিত টেক্সট হাইড করে রাখবে */
 }
 
 .hero-overlay {
@@ -288,7 +247,7 @@ header {
 }
 
 .whatsapp-btn:hover {
-    background-color: #16a34a;
+    background-color: #16 a34a;
 }
 
 /* ==========================================================================
@@ -360,7 +319,7 @@ section h2::after {
 }
 
 /* ==========================================================================
-   8. FEATURED PRODUCTS (FLEXBOX/GRID BALANCE)
+   8. FEATURED PRODUCTS
    ========================================================================== */
 .product-container {
     display: grid;
@@ -595,7 +554,7 @@ footer p {
    ========================================================================== */
 @media (min-width: 768px) {
     .hero {
-        height: 460px; /* ডেস্কটপে ব্যানার এরিয়া বড় দেখাবে */
+        height: 460px; /* ডেস্কটপে ব্যানার আরেকটু বড় দেখাবে */
     }
     .hero-overlay h1 {
         font-size: 44px;
