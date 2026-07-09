@@ -50,7 +50,7 @@ a {
     color: #fff;
 }
 
-/* ================= HEADER ================= */
+/* ================= HEADER & LOGO FIX ================= */
 header {
     background-color: #fff;
     display: flex;
@@ -71,12 +71,14 @@ header {
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
+    flex-shrink: 0; /* লোগো ইমেজ যেন চ্যাপ্টা বা ভেঙে না যায় */
 }
 
 .logo h2 {
     font-size: 20px;
     color: #1e293b;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 .logo small {
@@ -155,29 +157,13 @@ header {
     color: #fff;
 }
 
-/* ================= HERO & SLIDER ================= */
-/* ================= HEADER LOGO FIX ================= */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0; /* লোগো যেন চ্যাপ্টা বা ভেঙে না যায় */
-}
-
 /* ================= HERO & SLIDER FIX ================= */
 .hero {
     position: relative;
-    height: 500px; /* উচ্চতা কিছুটা বাড়িয়ে দেওয়া হলো */
+    height: 450px;
     width: 100%;
     overflow: hidden;
-    background-color: #1e293b; /* ছবি লোড না হলেও ব্যাকগ্রাউন্ড কালার সুন্দর দেখাবে */
+    background-color: #1e293b; /* ছবি লোড না হলেও ব্যাকগ্রাউন্ড ডার্ক থাকবে */
 }
 
 .slider {
@@ -200,13 +186,13 @@ header {
 }
 
 .slide.active {
-    opacity: 0.35; /* ছবির উজ্জ্বলতা কিছুটা কমিয়ে টেক্সটকে ফুটিয়ে তুলবে */
+    opacity: 0.35; /* ছবি আসলেও স্লাইডারের টেক্সট স্পষ্ট দেখানোর জন্য ব্রাইটনেস কন্ট্রোল */
 }
 
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ছবি যেন স্ক্রিন অনুযায়ী পারফেক্টলি বসে */
+    object-fit: cover; /* ছবিগুলোকে স্ক্রিনের সাথে পারফেক্ট ফিট করবে */
 }
 
 .hero-overlay {
@@ -219,63 +205,21 @@ header {
     width: 100%;
     max-width: 800px;
     padding: 0 20px;
-    z-index: 10; /* টেক্সট ও বাটন যেন ছবির ওপরে থাকে */
-}
-
-.hero-overlay h1 {
-    font-size: 42px;
-    font-weight: 800;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-.hero-overlay p {
-    font-size: 18px;
-    color: #f1f5f9;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-}
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-    opacity: 0.4; /* ছবির ওপরে একটা ডার্ক ইফেক্ট দিবে যাতে টেক্সট ক্লিয়ার দেখা যায় */
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    width: 90%;
-    max-width: 800px;
-    z-index: 10;
+    z-index: 10; /* টেক্সট যেন ব্রোকেন ইমেজের পেছনে না লুকায় */
 }
 
 .hero-overlay h1 {
     font-size: 38px;
     font-weight: 800;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
 .hero-overlay p {
     font-size: 18px;
     color: #e2e8f0;
     margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
 .btn {
@@ -379,7 +323,6 @@ section h2::after {
     border: 1px solid #e2e8f0;
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
-    flex-content: space-between;
     flex-direction: column;
 }
 
