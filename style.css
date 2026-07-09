@@ -246,26 +246,43 @@ header{
 
 .hero{
 
-height:500px;
+    height:500px;
 
-background:
-linear-gradient(
-rgba(0,0,0,0.55),
-rgba(0,0,0,0.55)
-),
-url("image/bg.jpg");
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.55)
+    ),
+    url("image/bg.jpg");
 
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
-display:flex;
-align-items:center;
-justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-text-align:center;
-color:white;
+    text-align:center;
+    color:white;
 
+}
+
+
+.hero-content h1{
+
+    font-size:45px;
+    margin-bottom:20px;
+
+}
+
+
+.hero-content p{
+
+    font-size:22px;
+    margin-bottom:30px;
+
+}
 }
 ),
    <!-- Desktop Computer -->
