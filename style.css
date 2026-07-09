@@ -156,18 +156,85 @@ header {
 }
 
 /* ================= HERO & SLIDER ================= */
+/* ================= HEADER LOGO FIX ================= */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* লোগো যেন চ্যাপ্টা বা ভেঙে না যায় */
+}
+
+/* ================= HERO & SLIDER FIX ================= */
 .hero {
     position: relative;
-    height: 450px;
+    height: 500px; /* উচ্চতা কিছুটা বাড়িয়ে দেওয়া হলো */
+    width: 100%;
     overflow: hidden;
-    background-color: #000;
+    background-color: #1e293b; /* ছবি লোড না হলেও ব্যাকগ্রাউন্ড কালার সুন্দর দেখাবে */
 }
 
-.slider, .slide {
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
 }
 
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 0.35; /* ছবির উজ্জ্বলতা কিছুটা কমিয়ে টেক্সটকে ফুটিয়ে তুলবে */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ছবি যেন স্ক্রিন অনুযায়ী পারফেক্টলি বসে */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 10; /* টেক্সট ও বাটন যেন ছবির ওপরে থাকে */
+}
+
+.hero-overlay h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-overlay p {
+    font-size: 18px;
+    color: #f1f5f9;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
 .slide {
     position: absolute;
     top: 0;
