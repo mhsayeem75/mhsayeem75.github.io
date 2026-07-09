@@ -1,20 +1,13 @@
-// ==========================================
-// Sayeem IT Solution
-// Admin Product Add System
-// ==========================================
-
-
-
 function addProduct(){
 
 
+let name=document.getElementById("name").value;
 
-let name = document.getElementById("name").value;
 
-let price = document.getElementById("price").value;
+let price=document.getElementById("price").value;
 
-let image = document.getElementById("image").value;
 
+let image=document.getElementById("image").value;
 
 
 
@@ -22,7 +15,7 @@ let image = document.getElementById("image").value;
 if(name=="" || price=="" || image==""){
 
 
-alert("Please fill all fields");
+alert("Fill all fields");
 
 return;
 
@@ -42,16 +35,11 @@ name:name,
 price:price,
 
 
-image:image,
-
-
-date:new Date()
+image:image
 
 
 
 })
-
-
 
 .then(()=>{
 
@@ -67,20 +55,16 @@ document.getElementById("price").value="";
 document.getElementById("image").value="";
 
 
-
 })
 
 
+.catch(error=>{
 
-.catch((error)=>{
 
-
-alert("Error: "+error.message);
-
+alert(error.message);
 
 
 });
-
 
 
 }
