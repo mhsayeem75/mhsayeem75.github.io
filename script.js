@@ -1,103 +1,46 @@
 // ==========================================
 // Sayeem IT Solution
-// Final Script.js
-// Design + Firebase Product System
+// Final script.js
 // ==========================================
 
 
 
-// ==========================================
-// LOAD PRODUCTS FROM FIREBASE
-// ==========================================
+// ===============================
+// FIREBASE PRODUCT LOAD
+// ===============================
 
 
-document.addEventListener("DOMContentLoaded",()=>{
-
-
-const productsBox = document.getElementById("productsData");
-
-
-if(!productsBox) return;
+document.addEventListener("DOMContentLoaded", function(){
 
 
 
-// Firebase check
+const productBox = document.getElementById("productsData");
 
 
-if(typeof db === "undefined"){
 
-
-console.log("Firebase not connected");
-
-return;
-
-
-}
-
+if(productBox && typeof db !== "undefined"){
 
 
 
 db.collection("products").onSnapshot((snapshot)=>{
 
 
-
-productsBox.innerHTML = "";
-
-
-
-if(snapshot.empty){
-
-
-productsBox.innerHTML = `
-
-
-<div class="card">
-
-
-<h3>No Product Available</h3>
-
-
-<p>
-
-Please check again later.
-
-</p>
-
-
-</div>
-
-
-`;
-
-
-return;
-
-
-}
-
-
-
-
-
 snapshot.forEach((doc)=>{
-
 
 
 let product = doc.data();
 
 
 
-productsBox.innerHTML += `
+productBox.innerHTML += `
 
 
 
-<div class="card">
+<div class="product-card">
 
 
 
 <img src="${product.image}"
-
-class="product-img"
 
 alt="${product.name}"
 
@@ -137,15 +80,14 @@ Price: ${product.price}
 
 
 
-<a class="btn"
+<a class="order-btn"
 
 target="_blank"
 
-href="https://wa.me/8801601689809?text=Hello%20Sayeem%20IT%20Solution%20I%20want%20to%20order%20${product.name}">
+href="https://wa.me/8801601689809?text=I want ${product.name}">
 
 
 Order Now
-
 
 </a>
 
@@ -153,7 +95,6 @@ Order Now
 
 
 </div>
-
 
 
 `;
@@ -164,44 +105,78 @@ Order Now
 
 
 
+});
+
+
+}
+
+else{
+
+
+console.log("Firebase not connected");
+
+
+}
+
+
+
 
 });
 
 
 
-});
 
 
 
 
 
 
+// ===============================
+// PRODUCT SEARCH
+// ===============================
 
 
 
-// ==========================================
-// PAGE LOADER
-// ==========================================
-
-
-window.addEventListener("load",()=>{
-
-
-const loader=document.getElementById("loader");
+const searchInput=document.getElementById("searchInput");
 
 
 
-if(loader){
+if(searchInput){
 
 
-setTimeout(()=>{
+
+searchInput.addEventListener("keyup",function(){
 
 
-loader.style.display="none";
+
+let value=this.value.toLowerCase();
 
 
-},800);
 
+let products=document.querySelectorAll(".product-card");
+
+
+
+products.forEach(function(product){
+
+
+
+let text=product.innerText.toLowerCase();
+
+
+
+if(text.includes(value)){
+
+
+product.style.display="block";
+
+
+}
+
+else{
+
+
+product.style.display="none";
 
 
 }
@@ -211,6 +186,10 @@ loader.style.display="none";
 });
 
 
+});
+
+
+}
 
 
 
@@ -218,9 +197,11 @@ loader.style.display="none";
 
 
 
-// ==========================================
-// BACK TO TOP BUTTON
-// ==========================================
+
+
+// ===============================
+// TOP BUTTON
+// ===============================
 
 
 
@@ -232,14 +213,14 @@ if(topBtn){
 
 
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll",function(){
 
 
 
 if(window.scrollY > 300){
 
 
-topBtn.style.display="flex";
+topBtn.style.display="block";
 
 
 }
@@ -260,7 +241,8 @@ topBtn.style.display="none";
 
 
 
-topBtn.addEventListener("click",()=>{
+topBtn.onclick=function(){
+
 
 
 window.scrollTo({
@@ -275,8 +257,7 @@ behavior:"smooth"
 });
 
 
-
-});
+};
 
 
 
@@ -290,9 +271,40 @@ behavior:"smooth"
 
 
 
-// ==========================================
+// ===============================
+// PAGE LOADER
+// ===============================
+
+
+window.addEventListener("load",()=>{
+
+
+let loader=document.getElementById("loader");
+
+
+if(loader){
+
+
+loader.style.display="none";
+
+
+}
+
+
+
+});
+
+
+
+
+
+
+
+
+
+// ===============================
 // SMOOTH SCROLL
-// ==========================================
+// ===============================
 
 
 
@@ -304,7 +316,9 @@ link.addEventListener("click",function(e){
 
 
 let target=document.querySelector(
+
 this.getAttribute("href")
+
 );
 
 
@@ -312,14 +326,13 @@ this.getAttribute("href")
 if(target){
 
 
+
 e.preventDefault();
 
 
 target.scrollIntoView({
 
-
 behavior:"smooth"
-
 
 });
 
@@ -329,7 +342,6 @@ behavior:"smooth"
 
 
 });
-
 
 
 });
