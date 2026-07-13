@@ -135,12 +135,14 @@ header{
 
 /* HERO */
 
+/* ================= HERO ================= */
+
 .hero{
     height:650px;
 
     background:
-    linear-gradient(rgba(0,20,40,0.60), rgba(0,20,40,0.60)),
-    url("image/hero-bg.png");
+    linear-gradient(rgba(0,20,40,.55), rgba(0,20,40,.55)),
+    url("image/bg.jpg");
 
     background-size:cover;
     background-position:center;
@@ -152,6 +154,10 @@ header{
     text-align:center;
 
     color:#fff;
+}
+
+.hero-overlay{
+    max-width:800px;
 }
 
 .hero-overlay{
