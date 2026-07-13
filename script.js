@@ -1,347 +1,107 @@
-// ==========================================
-// Sayeem IT Solution
-// Final script.js
-// ==========================================
+// ==============================
+// SAYEEM IT SOLUTION
+// script.js
+// ==============================
 
+// Back To Top Button
+const topBtn = document.getElementById("topBtn");
 
+window.onscroll = function () {
 
-// ===============================
-// FIREBASE PRODUCT LOAD
-// ===============================
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
 
+        topBtn.style.display = "block";
 
-document.addEventListener("DOMContentLoaded", function(){
+    } else {
 
+        topBtn.style.display = "none";
 
-
-const productBox = document.getElementById("productsData");
-
-
-
-if(productBox && typeof db !== "undefined"){
-
-
-
-db.collection("products").onSnapshot((snapshot)=>{
-
-
-snapshot.forEach((doc)=>{
-
-
-let product = doc.data();
-
-
-
-productBox.innerHTML += `
-
-
-
-<div class="product-card">
-
-
-
-<img src="${product.image}"
-
-alt="${product.name}"
-
-onerror="this.src='images/no-image.png'">
-
-
-
-
-
-<h3>
-
-${product.name}
-
-</h3>
-
-
-
-
-
-<p>
-
-Sayeem IT Solution Quality Product
-
-</p>
-
-
-
-
-
-<h4>
-
-Price: ${product.price}
-
-</h4>
-
-
-
-
-
-<a class="order-btn"
-
-target="_blank"
-
-href="https://wa.me/8801601689809?text=I want ${product.name}">
-
-
-Order Now
-
-</a>
-
-
-
-
-</div>
-
-
-`;
-
-
-
-});
-
-
-
-});
-
-
-}
-
-else{
-
-
-console.log("Firebase not connected");
-
-
-}
-
-
-
-
-});
-
-
-
-
-
-
-
-
-
-// ===============================
-// PRODUCT SEARCH
-// ===============================
-
-
-
-const searchInput=document.getElementById("searchInput");
-
-
-
-if(searchInput){
-
-
-
-searchInput.addEventListener("keyup",function(){
-
-
-
-let value=this.value.toLowerCase();
-
-
-
-let products=document.querySelectorAll(".product-card");
-
-
-
-products.forEach(function(product){
-
-
-
-let text=product.innerText.toLowerCase();
-
-
-
-if(text.includes(value)){
-
-
-product.style.display="block";
-
-
-}
-
-else{
-
-
-product.style.display="none";
-
-
-}
-
-
-
-});
-
-
-});
-
-
-}
-
-
-
-
-
-
-
-
-
-// ===============================
-// TOP BUTTON
-// ===============================
-
-
-
-const topBtn=document.getElementById("topBtn");
-
-
-
-if(topBtn){
-
-
-
-window.addEventListener("scroll",function(){
-
-
-
-if(window.scrollY > 300){
-
-
-topBtn.style.display="block";
-
-
-}
-
-else{
-
-
-topBtn.style.display="none";
-
-
-}
-
-
-
-});
-
-
-
-
-
-topBtn.onclick=function(){
-
-
-
-window.scrollTo({
-
-
-top:0,
-
-
-behavior:"smooth"
-
-
-});
-
+    }
 
 };
 
+// Scroll To Top
+topBtn.onclick = function () {
 
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-}
+};
 
+// ==============================
+// Search Product
+// ==============================
 
+const searchInput = document.querySelector(".search-box input");
 
+const products = document.querySelectorAll(".product-card");
 
+searchInput.addEventListener("keyup", function () {
 
+    let value = searchInput.value.toLowerCase();
 
+    products.forEach(function (item) {
 
+        let text = item.innerText.toLowerCase();
 
+        if (text.indexOf(value) > -1) {
 
-// ===============================
-// PAGE LOADER
-// ===============================
+            item.style.display = "block";
 
+        } else {
 
-window.addEventListener("load",()=>{
+            item.style.display = "none";
 
+        }
 
-let loader=document.getElementById("loader");
-
-
-if(loader){
-
-
-loader.style.display="none";
-
-
-}
-
-
-
-});
-
-
-
-
-
-
-
-
-
-// ===============================
-// SMOOTH SCROLL
-// ===============================
-
-
-
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
-
-
-link.addEventListener("click",function(e){
-
-
-
-let target=document.querySelector(
-
-this.getAttribute("href")
-
-);
-
-
-
-if(target){
-
-
-
-e.preventDefault();
-
-
-target.scrollIntoView({
-
-behavior:"smooth"
+    });
 
 });
 
+// ==============================
+// Sticky Navbar
+// ==============================
 
-}
+const navbar = document.querySelector(".navbar");
 
+window.addEventListener("scroll", function () {
 
+    if (window.scrollY > 120) {
+
+        navbar.classList.add("sticky");
+
+    } else {
+
+        navbar.classList.remove("sticky");
+
+    }
 
 });
 
+// ==============================
+// Fade Animation
+// ==============================
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+});
+
+document.querySelectorAll("section").forEach(section => {
+
+    section.classList.add("hidden");
+
+    observer.observe(section);
 
 });
