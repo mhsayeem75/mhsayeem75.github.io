@@ -1,602 +1,506 @@
-/* ==========================================================================
-   1. GLOBAL STYLES & RESET
-   ========================================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* ======================================
+   SAYEEM IT SOLUTION
+   Professional Blue Theme
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:#003b7a;
+    color:#fff;
+    padding:10px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.topbar span{
+    margin-right:20px;
+}
+
+.topbar a{
+    color:#fff;
+    margin-left:15px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.topbar a:hover{
+    color:#25d366;
+}
+
+/* HEADER */
+
+header{
+    background:#fff;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.logo h2{
+    color:#0066cc;
+}
+
+.logo small{
+    color:#666;
+}
+
+/* SEARCH */
+
+.search-box{
+    width:40%;
+    display:flex;
+}
+
+.search-box input{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    outline:none;
+    border-radius:5px 0 0 5px;
+}
+
+.search-box button{
+    width:55px;
+    border:none;
+    background:#0066cc;
+    color:#fff;
+    cursor:pointer;
 }
 
-html {
-    scroll-behavior: smooth;
+.header-icons a{
+    color:#0066cc;
+    font-size:22px;
+    margin-left:18px;
 }
 
-body {
-    background-color: #f8fafc;
-    color: #1e293b;
-    line-height: 1.6;
+/* NAVBAR */
+
+.navbar{
+    background:#0066cc;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+.navbar li{
+    padding:18px;
 }
 
-/* ==========================================================================
-   2. TOP BAR
-   ========================================================================== */
-.topbar {
-    background-color: #0f172a;
-    color: #cbd5e1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
-    font-size: 13px;
+.navbar a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
 }
+
+.navbar a:hover{
+    color:#ffd400;
+}
+
+/* HERO */
+
+.hero{
+    height:550px;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("image/bg.jpg");
 
-.top-left {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
-.top-left i, .top-right i {
-    margin-right: 5px;
-    color: #38bdf8;
+.hero-overlay{
+    color:#fff;
 }
 
-.top-right a {
-    margin-left: 15px;
-    transition: color 0.3s;
+.hero-overlay h1{
+    font-size:48px;
+    margin-bottom:20px;
 }
 
-.top-right a:hover {
-    color: #fff;
+.hero-overlay p{
+    font-size:22px;
+    margin-bottom:35px;
 }
 
-/* ==========================================================================
-   3. HEADER & LOGO FIX
-   ========================================================================== */
-header {
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:#0066cc;
+    color:#fff;
+    text-decoration:none;
+    border-radius:5px;
+    margin:5px;
+    transition:.3s;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.btn:hover{
+    background:#004999;
 }
 
-.logo img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
+.whatsapp-btn{
+    background:#25d366;
 }
 
-.logo h2 {
-    font-size: 20px;
-    color: #0f172a;
-    font-weight: 700;
-    line-height: 1.2;
+.whatsapp-btn:hover{
+    background:#128c46;
 }
+/* ======================================
+   CATEGORIES
+====================================== */
 
-.logo small {
-    display: block;
-    color: #64748b;
-    font-size: 12px;
-    letter-spacing: 1px;
-    font-weight: 500;
+section{
+    padding:70px 6%;
 }
 
-.search-box {
-    display: flex;
-    width: 40%;
-    max-width: 500px;
+section h2{
+    text-align:center;
+    color:#003b7a;
+    font-size:34px;
+    margin-bottom:40px;
 }
 
-.search-box input {
-    width: 100%;
-    padding: 10px 15px;
-    border: 1px solid #cbd5e1;
-    border-right: none;
-    border-radius: 6px 0 0 6px;
-    outline: none;
-    font-size: 14px;
-    background-color: #f8fafc;
-}
-
-.search-box input:focus {
-    border-color: #2563eb;
-}
-
-background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('images/bg.jpg');
-.search-box button {
-    background-color: #2563eb;
-    color: #fff;
-    border: none;
-    padding: 0 20px;
-    border-radius: 0 6px 6px 0;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.search-box button:hover {
-    background-color: #1d4ed8;
-}
-
-.header-icons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.header-icons a {
-    font-size: 20px;
-    color: #475569;
-    transition: color 0.3s;
-}
-
-.header-icons a:hover {
-    color: #2563eb;
+.category-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
 }
 
-/* ==========================================================================
-   4. NAVIGATION BAR
-   ========================================================================== */
-.navbar {
-    background-color: #1e293b;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+.category-card{
+    background:#fff;
+    border-radius:12px;
+    padding:35px 20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
+.category-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
 }
 
-.navbar ul li a {
-    display: block;
-    padding: 15px 25px;
-    color: #f1f5f9;
-    font-weight: 600;
-    font-size: 15px;
-    transition: all 0.3s;
+.category-card i{
+    font-size:45px;
+    color:#0066cc;
+    margin-bottom:15px;
 }
-
-.navbar ul li a:hover {
-    background-color: #2563eb;
-    color: #fff;
+
+.category-card h3{
+    color:#003b7a;
+    font-size:20px;
 }
+
+/* ======================================
+   PRODUCTS
+====================================== */
 
-/* ==========================================================================
-   5. HERO BACKROUND IMAGE FIX (NEW ADDED)
-   ========================================================================== */
-.hero {
-    position: relative;
-    height: 380px; /* মোবাইলের জন্য পারফেক্ট সাইজ */
-    width: 100%;
-    overflow: hidden;
-    /* এখানে আপনার bg.jpg এবং টেক্সট ক্লিয়ার রাখার জন্য ডার্ক ওভারলে দেওয়া হয়েছে */
-    background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), url('images/bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-overlay {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    color: #fff;
-    width: 100%;
-    max-width: 750px;
-    padding: 0 20px;
-    margin: 0 auto;
-}
-
-.hero-overlay h1 {
-    font-size: 26px;
-    font-weight: 800;
-    margin-bottom: 12px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-    line-height: 1.3;
-}
-
-.hero-overlay p {
-    font-size: 14px;
-    color: #e2e8f0;
-    margin-bottom: 25px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 24px;
-    background-color: #2563eb;
-    color: #fff;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 14px;
-    margin: 5px;
-    transition: transform 0.2s, background 0.3s;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-}
-
-.btn:hover {
-    background-color: #1d4ed8;
-    transform: translateY(-2px);
-}
-
-.whatsapp-btn {
-    background-color: #22c55e;
+.product-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
 
-.whatsapp-btn:hover {
-    background-color: #16 a34a;
-}
+.product-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
 
-/* ==========================================================================
-   6. REUSABLE SECTION HEADER
-   ========================================================================== */
-section {
-    padding: 60px 5%;
-}
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
 
-section h2 {
-    text-align: center;
-    font-size: 26px;
-    color: #0f172a;
-    margin-bottom: 45px;
-    position: relative;
-    font-weight: 700;
+.product-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
 }
 
-section h2::after {
-    content: '';
-    width: 50px;
-    height: 4px;
-    background-color: #2563eb;
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
+.product-card h3{
+    color:#003b7a;
+    font-size:22px;
+    margin:20px 20px 10px;
 }
 
-/* ==========================================================================
-   7. POPULAR CATEGORIES (GRID STYLE)
-   ========================================================================== */
-.category-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
+.product-card p{
+    color:#666;
+    margin:0 20px 15px;
+    line-height:1.6;
 }
-
-.category-card {
-    background-color: #fff;
-    padding: 30px 15px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 2px 4px -1px rgba(0,0,0,0.01);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid #e2e8f0;
-    cursor: pointer;
+
+.product-card h4{
+    color:#0066cc;
+    margin:0 20px 20px;
+    font-size:20px;
 }
 
-.category-card:hover {
-    transform: translateY(-5px);
-    border-color: #2563eb;
-    box-shadow: 0 12px 20px -3px rgba(37,99,235,0.1);
+.order-btn{
+    display:block;
+    margin:20px;
+    padding:12px;
+    background:#25d366;
+    color:#fff;
+    text-align:center;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-.category-card i {
-    font-size: 36px;
-    color: #2563eb;
-    margin-bottom: 15px;
-    display: block;
+.order-btn:hover{
+    background:#128c46;
 }
-
-.category-card h3 {
-    font-size: 14px;
-    color: #334155;
-    font-weight: 600;
-    line-height: 1.4;
+/* ======================================
+   SERVICES
+====================================== */
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
-/* ==========================================================================
-   8. FEATURED PRODUCTS
-   ========================================================================== */
-.product-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+.service-card{
+    background:#fff;
+    padding:30px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
-.product-card {
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-    border: 1px solid #e2e8f0;
-    transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
+.service-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+.service-card i{
+    font-size:45px;
+    color:#0066cc;
+    margin-bottom:15px;
 }
 
-.product-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    background-color: #f8fafc;
+.service-card h3{
+    color:#003b7a;
+    margin-bottom:10px;
 }
 
-.product-info {
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+.service-card p{
+    color:#666;
+    line-height:1.7;
 }
 
-.product-info h3 {
-    font-size: 18px;
-    color: #0f172a;
-    margin-bottom: 10px;
-    font-weight: 700;
+/* ======================================
+   ABOUT
+====================================== */
+
+#about{
+    background:#fff;
 }
 
-.product-info p {
-    font-size: 14px;
-    color: #64748b;
-    margin-bottom: 20px;
-    flex-grow: 1;
+#about p{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:1.9;
+    font-size:18px;
+    color:#555;
 }
 
-.product-info h4 {
-    font-size: 20px;
-    color: #2563eb;
-    margin-bottom: 15px;
-    font-weight: 700;
+/* ======================================
+   CONTACT
+====================================== */
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
-.order-btn {
-    display: block;
-    text-align: center;
-    background-color: #0f172a;
-    color: #fff;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: background 0.3s;
+.contact-box p{
+    margin:18px 0;
+    font-size:18px;
 }
 
-.order-btn:hover {
-    background-color: #2563eb;
+.contact-box i{
+    color:#0066cc;
+    margin-right:10px;
 }
+
+/* ======================================
+   FOOTER
+====================================== */
 
-/* ==========================================================================
-   9. SERVICES
-   ========================================================================== */
-.service-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
+footer{
+    background:#003b7a;
+    color:#fff;
+    text-align:center;
+    padding:40px 20px;
 }
 
-.service-card {
-    background-color: #fff;
-    padding: 35px 25px;
-    border-radius: 10px;
-    border-top: 4px solid #2563eb;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-    text-align: center;
+footer h3{
+    margin-bottom:10px;
 }
 
-.service-card i {
-    font-size: 38px;
-    color: #2563eb;
-    margin-bottom: 18px;
+footer p{
+    margin:8px 0;
 }
 
-.service-card h3 {
-    font-size: 18px;
-    color: #0f172a;
-    margin-bottom: 12px;
+/* ======================================
+   FLOATING WHATSAPP
+====================================== */
+
+.floating-whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    background:#25d366;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    font-size:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    transition:.3s;
+    z-index:999;
 }
 
-.service-card p {
-    font-size: 14px;
-    color: #64748b;
+.floating-whatsapp:hover{
+    transform:scale(1.1);
 }
+
+/* ======================================
+   BACK TO TOP
+====================================== */
 
-/* ==========================================================================
-   10. ABOUT US
-   ========================================================================== */
-#about {
-    background-color: #fff;
-    text-align: center;
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:95px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#0066cc;
+    color:#fff;
+    cursor:pointer;
+    display:none;
+    font-size:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
 }
 
-#about p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 16px;
-    color: #475569;
-    line-height: 1.8;
-}
-
-/* ==========================================================================
-   11. CONTACT & FOOTER
-   ========================================================================== */
-#contact {
-    background-color: #0f172a;
-    color: #fff;
+#topBtn:hover{
+    background:#004999;
 }
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:768px){
 
-#contact h2 {
-    color: #fff;
-}
-
-.contact-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.contact-box p {
-    font-size: 15px;
-    background-color: #1e293b;
-    padding: 15px 25px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 260px;
-}
-
-.contact-box i {
-    color: #38bdf8;
-    font-size: 18px;
-}
-
-footer {
-    background-color: #020617;
-    color: #64748b;
-    text-align: center;
-    padding: 35px 20px;
-    font-size: 13px;
-    border-top: 1px solid #1e293b;
-}
-
-footer h3 {
-    color: #cbd5e1;
-    margin-bottom: 10px;
-}
-
-footer p {
-    margin-bottom: 6px;
-}
-
-/* ==========================================================================
-   12. FLOATING BUTTONS
-   ========================================================================== */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #22c55e;
-    color: #fff;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    z-index: 9999;
-    transition: transform 0.3s;
-}
-
-.floating-whatsapp:hover {
-    transform: scale(1.1);
-}
-
-#topBtn {
-    position: fixed;
-    bottom: 95px;
-    right: 25px;
-    background-color: #1e293b;
-    color: #fff;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    z-index: 9998;
-    transition: background 0.3s;
-}
-
-#topBtn:hover {
-    background-color: #2563eb;
-}
-
-/* ==========================================================================
-   13. MEDIA QUERIES (DESKTOP OPTIMIZATION)
-   ========================================================================== */
-@media (min-width: 768px) {
-    .hero {
-        height: 460px; /* ডেস্কটপে ব্যানার আরেকটু বড় দেখাবে */
+    .topbar{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
     }
-    .hero-overlay h1 {
-        font-size: 44px;
-    }
-    .hero-overlay p {
-        font-size: 18px;
-    }
-}
 
-/* ==========================================================================
-   14. MEDIA QUERIES (MOBILE RESPONSIVE DOWNGRADES)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .topbar {
-        flex-direction: column;
-        gap: 8px;
-        text-align: center;
+    header{
+        flex-direction:column;
+        gap:20px;
     }
-    
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-        padding: 20px 5%;
+
+    .search-box{
+        width:100%;
     }
-    
-    .search-box {
-        width: 100%;
+
+    .navbar ul{
+        flex-direction:column;
+        text-align:center;
     }
-    
-    .navbar ul {
-        flex-direction: column;
-        text-align: center;
+
+    .hero{
+        height:420px;
+        padding:20px;
     }
-    
-    .navbar ul li a {
-        padding: 12px;
-        border-bottom: 1px solid #334155;
+
+    .hero-overlay h1{
+        font-size:30px;
     }
-    
-    section {
-        padding: 45px 20px;
+
+    .hero-overlay p{
+        font-size:16px;
     }
+
+    section{
+        padding:50px 20px;
+    }
+
+    section h2{
+        font-size:28px;
+    }
+
+    .category-container,
+    .product-container,
+    .service-container{
+        grid-template-columns:1fr;
+    }
+
+    .contact-box{
+        padding:25px;
+    }
+
 }
